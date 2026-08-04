@@ -1,0 +1,49 @@
+# Movie Recommendation System
+
+movies = {
+    "Action": [
+        "John Wick",
+        "The Dark Knight",
+        "Mad Max: Fury Road"
+    ],
+    "Comedy": [
+        "Home Alone",
+        "The Mask",
+        "Mr. Bean's Holiday"
+    ],
+    "Drama": [
+        "Forrest Gump",
+        "The Pursuit of Happyness",
+        "The Shawshank Redemption"
+    ],
+    "Horror": [
+        "The Conjuring",
+        "Insidious",
+        "A Quiet Place"
+    ],
+    "Sci-Fi": [
+        "Interstellar",
+        "Inception",
+        "The Matrix"
+    ]
+}
+
+while True:
+    print("\n===== MOVIE RECOMMENDATION SYSTEM =====")
+    print("Available Genres:")
+    for genre in movies:
+        print("-", genre)
+
+    choice = input("\nEnter your favorite genre: ").title()
+
+    if choice in movies:
+        print("\nRecommended Movies:")
+        for movie in movies[choice]:
+            print("✔", movie)
+    else:
+        print("Sorry! Genre not available.")
+
+    again = input("\nDo you want another recommendation? (yes/no): ").lower()
+    if again != "yes":
+        print("Thank you for using Movie Recommendation System!")
+        break
